@@ -102,6 +102,17 @@ int main()
 		
 	} while (restart);
 	
+	cout << endl<< "Trial errors: " << endl;
+	//trial
+	bbq.loadCoals();
+	bbq.light();
+	bbq.cook(); //as procedure
+	
+	bbq.reset();
+	
+	bbq.light();
+	bbq.loadCoals();
+	bbq.cook();
 	
 	return 0;
 }
