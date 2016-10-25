@@ -34,7 +34,7 @@ void Barbeque::loadCoals()
 void Barbeque::light()
 {
 	if(coal)
-		cout << "The grill is lit!!" << endl;
+		cout << "You can light the grill now!!" << endl;
 	else
 		cout << "You need coal first!!" << endl;
 }
@@ -56,29 +56,41 @@ void Barbeque::reset()
 bool Barbeque::hasCoals()
 {
 	string option,temp="";
-	cout << "Have you light it yet? "; cin >> option;
+	cout << "Does the grill have coals yet? "; cin >> option;
 	for (int i = 0; i < option.length(); i++)
 	{
 		temp+=toupper(option[i]);
 	}
 	if(temp == "YES")
-		return true;
+	{
+		coal = true;
+		return coal;
+	}
 	else
-		return false;
+	{
+		coal = false;
+		return coal;
+	}
 }
 
 bool Barbeque::isLit()
 {
 	string option,temp="";
-	cout << "Have you light it yet? "; cin >> option;
+	cout << "Do you want to light the grill? "; cin >> option;
 	for (int i = 0; i < option.length(); i++)
 	{
 		temp+=toupper(option[i]);
 	}
 	if(temp == "YES")
-		return true;
+	{
+		lightz = true;
+		return lightz;
+	}
 	else
-		return false;
+	{
+		lightz = false;
+		return lightz;
+	}
 }
 
 bool re_start();
@@ -86,7 +98,6 @@ bool re_start();
 int main()
 {
 	Barbeque bbq("Abc Grill", "Model Sexy");
-	bbq.light();
 	bool restart;
 	do{
 		restart = 0;
